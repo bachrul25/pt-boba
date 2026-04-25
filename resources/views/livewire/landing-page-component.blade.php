@@ -1,58 +1,44 @@
 <div>
-    {{-- HERO --}}
-    <section id="home" class="hero py-5">
-        <div class="container py-5 position-relative" style="z-index:2;">
+    {{-- Hero --}}
+    <section id="home" class="hero-boba">
+        <div class="container">
             <div class="row align-items-center g-5">
                 <div class="col-lg-7">
-                    <span class="badge bg-warning text-dark mb-3 px-3 py-2 rounded-pill">
-                        <i class="bi bi-stars me-1"></i> PT Bikin Orang Bahagia &mdash; PT BOBA
-                    </span>
-                    <h1 class="display-4 fw-bold mb-3">PT Bikin Orang Bahagia</h1>
-                    <h2 class="h5 fw-light text-warning mb-3">
-                        Industri Tekstil &middot; Produk Olahan &middot; Fashion Brand &middot; Green Technology
-                    </h2>
-                    <p class="lead opacity-90 mb-4">
-                        PT BOBA menghadirkan produk fashion berkualitas melalui brand
-                        <strong>tsoecha.co</strong> dan <strong>sokyuut</strong>,
-                        serta layanan ramah lingkungan melalui <strong>Ponpin</strong>.
-                    </p>
-                    <div class="d-flex flex-wrap gap-2">
-                        <a href="{{ url('/register') }}" class="btn btn-warning btn-lg fw-semibold">
-                            <i class="bi bi-rocket-takeoff me-1"></i> Mulai Sekarang
-                        </a>
-                        <a href="#products" class="btn btn-outline-light btn-lg">
-                            <i class="bi bi-bag me-1"></i> Lihat Produk
-                        </a>
-                        <a href="#services" class="btn btn-outline-light btn-lg">
-                            <i class="bi bi-recycle me-1"></i> Lihat Layanan
-                        </a>
+                    <span class="section-eyebrow">PT Bikin Orang Bahagia</span>
+                    <h1 class="section-title display-4 mt-2 mb-3">PT <span class="text-success">BOBA</span>.<br>Tekstil, Fashion, & <span class="text-warning">Green Technology</span>.</h1>
+                    <p class="lead text-muted mb-3">Industri Tekstil, Produk Olahan, Fashion Brand, dan Green Technology.</p>
+                    <p class="mb-4 text-muted">PT BOBA menghadirkan produk fashion berkualitas melalui brand <strong>tsoecha.co</strong> dan <strong>sokyuut</strong>, serta layanan ramah lingkungan melalui <strong>tos2bro</strong>.</p>
+                    <div class="d-flex gap-2 flex-wrap">
+                        <a href="{{ route('home') }}" class="btn btn-boba btn-lg"><i class="bi bi-rocket-takeoff me-1"></i> Mulai Sekarang</a>
+                        <a href="#products" class="btn btn-outline-success btn-lg">Lihat Produk</a>
+                        <a href="#services" class="btn btn-outline-warning btn-lg">Lihat Layanan</a>
                     </div>
                 </div>
                 <div class="col-lg-5">
-                    <div class="bg-white text-dark rounded-4 shadow-lg p-4 p-lg-5">
-                        <div class="d-flex align-items-center gap-3 mb-3">
-                            <span class="logo-pill" style="width:56px;height:56px;font-size:1.4rem;">B</span>
-                            <div>
-                                <div class="fw-bold text-boba">PT BOBA</div>
-                                <small class="text-secondary">Industri Tekstil &amp; Green Tech</small>
-                            </div>
-                        </div>
+                    <div class="p-4 bg-white rounded-4 shadow-sm">
                         <div class="row g-3 text-center">
                             <div class="col-6">
-                                <div class="border rounded-3 p-3">
-                                    <div class="stat-value">3</div>
-                                    <small class="text-secondary">Brand Utama</small>
+                                <div class="p-3 bg-light rounded-3">
+                                    <div class="fs-2 text-success fw-bold">3</div>
+                                    <div class="small text-muted">Brand Utama</div>
                                 </div>
                             </div>
                             <div class="col-6">
-                                <div class="border rounded-3 p-3">
-                                    <div class="stat-value">2</div>
-                                    <small class="text-secondary">Sektor Bisnis</small>
+                                <div class="p-3 bg-light rounded-3">
+                                    <div class="fs-2 text-warning fw-bold">4+</div>
+                                    <div class="small text-muted">Layanan Green Tech</div>
                                 </div>
                             </div>
-                            <div class="col-12">
-                                <div class="border rounded-3 p-3">
-                                    <span class="esg-badge"><i class="bi bi-recycle"></i> ESG &amp; Green Technology Ready</span>
+                            <div class="col-6">
+                                <div class="p-3 bg-light rounded-3">
+                                    <div class="fs-2 text-primary fw-bold">100%</div>
+                                    <div class="small text-muted">Lokal Indonesia</div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="p-3 bg-light rounded-3">
+                                    <div class="fs-2 text-danger fw-bold"><i class="bi bi-recycle"></i></div>
+                                    <div class="small text-muted">Eco Friendly</div>
                                 </div>
                             </div>
                         </div>
@@ -62,213 +48,271 @@
         </div>
     </section>
 
-    {{-- ABOUT --}}
+    {{-- About --}}
     <section id="about" class="py-5">
-        <div class="container py-4">
+        <div class="container">
             <div class="row g-5 align-items-center">
-                <div class="col-lg-5">
-                    <span class="text-uppercase small fw-bold text-boba">Tentang Perusahaan</span>
-                    <h2 class="section-title display-6 mb-3">Bikin Orang Bahagia Lewat Produk &amp; Lingkungan</h2>
-                    <p class="section-subtitle">
-                        PT Bikin Orang Bahagia (PT BOBA) adalah perusahaan yang bergerak di bidang
-                        industri tekstil, produk olahan, fashion brand, dan layanan green technology.
-                        PT BOBA menaungi brand fashion <strong>tsoecha.co</strong> dan <strong>sokyuut</strong>,
-                        serta layanan keberlanjutan <strong>Ponpin</strong>.
-                    </p>
+                <div class="col-lg-6">
+                    <span class="section-eyebrow">Tentang PT BOBA</span>
+                    <h2 class="section-title mt-2">Satu Perusahaan, Tiga Ekosistem.</h2>
+                    <p class="text-muted">PT Bikin Orang Bahagia (PT BOBA) adalah perusahaan yang bergerak di bidang industri tekstil, produk olahan, fashion brand, dan layanan green technology. Kami menaungi brand fashion pria <strong>tsoecha.co</strong>, brand fashion wanita <strong>sokyuut</strong>, serta holding green technology <strong>tos2bro</strong>.</p>
+                    <div class="row g-3 mt-2">
+                        <div class="col-md-6">
+                            <div class="card-boba p-3 h-100">
+                                <h6 class="fw-bold"><i class="bi bi-eye text-success"></i> Visi</h6>
+                                <p class="small text-muted mb-0">Menjadi perusahaan multi-sektor terdepan yang memadukan fashion berkualitas dengan teknologi ramah lingkungan di Indonesia.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card-boba p-3 h-100">
+                                <h6 class="fw-bold"><i class="bi bi-compass text-warning"></i> Misi</h6>
+                                <p class="small text-muted mb-0">Menghadirkan produk fashion lokal bermutu, mengelola sampah secara berkelanjutan, dan mendukung ekonomi kreatif Indonesia.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="card-boba p-3 h-100">
+                                <h6 class="fw-bold"><i class="bi bi-stars text-primary"></i> Nilai Perusahaan</h6>
+                                <p class="small text-muted mb-0">Kualitas, keberlanjutan, inovasi, transparansi, dan kebahagiaan pelanggan.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-lg-7">
-                    <div class="row g-3">
-                        <div class="col-md-4">
-                            <div class="ecosystem-node h-100">
-                                <i class="bi bi-eye text-boba fs-3"></i>
-                                <h5 class="mt-2 mb-1 fw-bold">Visi</h5>
-                                <p class="small text-secondary mb-0">
-                                    Menjadi perusahaan terdepan di industri fashion dan green technology
-                                    yang membahagiakan masyarakat dan menjaga keberlanjutan lingkungan.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="ecosystem-node h-100">
-                                <i class="bi bi-bullseye text-boba fs-3"></i>
-                                <h5 class="mt-2 mb-1 fw-bold">Misi</h5>
-                                <ul class="small text-secondary mb-0 ps-3">
-                                    <li>Menghadirkan fashion berkualitas &amp; modern.</li>
-                                    <li>Memberdayakan ekonomi kreatif lokal.</li>
-                                    <li>Mengembangkan green technology berkelanjutan.</li>
-                                    <li>Membangun ekosistem bisnis yang menguntungkan investor.</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="ecosystem-node h-100">
-                                <i class="bi bi-heart text-boba fs-3"></i>
-                                <h5 class="mt-2 mb-1 fw-bold">Nilai</h5>
-                                <ul class="small text-secondary mb-0 ps-3">
-                                    <li>Kualitas &amp; integritas.</li>
-                                    <li>Keberlanjutan (sustainability).</li>
-                                    <li>Inovasi berkelanjutan.</li>
-                                    <li>Kebahagiaan pelanggan &amp; mitra.</li>
-                                </ul>
-                            </div>
-                        </div>
+                <div class="col-lg-6">
+                    <div class="p-4 p-md-5 rounded-4" style="background: linear-gradient(135deg, #dcfce7, #fef3c7);">
+                        <div class="fs-1 mb-3"><i class="bi bi-buildings text-success"></i></div>
+                        <h4 class="fw-bold">Ekosistem PT BOBA</h4>
+                        <ul class="list-unstyled mt-3">
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> <strong>tsoecha.co</strong> — Fashion pria</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> <strong>sokyuut</strong> — Fashion wanita</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> <strong>tos2bro</strong> — Green technology holding</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    {{-- COMPANY HIGHLIGHT (Investor) --}}
-    <section class="py-5 bg-boba-light">
-        <div class="container py-3">
-            <div class="text-center mb-4">
-                <span class="text-uppercase small fw-bold text-boba">Company Highlight</span>
-                <h2 class="section-title display-6 mb-2">Kekuatan PT BOBA</h2>
-                <p class="section-subtitle mx-auto" style="max-width:720px">
-                    Ringkasan kekuatan perusahaan dalam angka &mdash; potensi pertumbuhan jelas, ekosistem terintegrasi.
-                </p>
-            </div>
-            <div class="row g-3">
-                @foreach($metrics as $m)
-                    <div class="col-6 col-md-4 col-lg-2">
-                        <div class="stat-card bg-white p-3 h-100 text-center">
-                            <i class="bi {{ $m->icon ?: 'bi-graph-up' }} text-boba fs-3"></i>
-                            <div class="stat-value mt-2">{{ $m->value }}</div>
-                            <small class="text-secondary d-block">{{ $m->unit }}</small>
-                            <div class="fw-semibold mt-1 small">{{ $m->name }}</div>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
-        </div>
-    </section>
-
-    {{-- BRANDS --}}
-    <section id="brands" class="py-5">
-        <div class="container py-3">
-            <div class="text-center mb-4">
-                <span class="text-uppercase small fw-bold text-boba">Brand Perusahaan</span>
-                <h2 class="section-title display-6 mb-2">3 Brand Utama PT BOBA</h2>
-                <p class="section-subtitle mx-auto" style="max-width:720px">
-                    Fashion pria, fashion wanita, dan layanan green technology &mdash; dalam satu ekosistem.
-                </p>
+    {{-- Brand Section --}}
+    <section id="brands" class="py-5 bg-white">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="section-eyebrow">Brand Perusahaan</span>
+                <h2 class="section-title mt-2">Tiga Brand, Satu Visi Kebahagiaan</h2>
             </div>
             <div class="row g-4">
-                @foreach($brands as $brand)
-                    <div class="col-md-4">
-                        <div class="brand-card card h-100 border-0 shadow-sm">
-                            <div class="card-body p-4 d-flex flex-column">
-                                <div class="d-flex align-items-center gap-3 mb-3">
-                                    <div class="logo-pill" style="width:56px;height:56px;font-size:1.4rem;">
-                                        @if(str_contains($brand->slug, 'tsoecha')) T
-                                        @elseif(str_contains($brand->slug, 'sokyuut')) S
-                                        @else P
-                                        @endif
-                                    </div>
-                                    <div>
-                                        <h5 class="fw-bold mb-0">{{ $brand->name }}</h5>
-                                        <small class="text-secondary">{{ $brand->category }}</small>
-                                    </div>
-                                </div>
-                                <p class="text-secondary small flex-grow-1">{{ $brand->description }}</p>
-                                @if($brand->type === 'service')
-                                    <a href="#services" class="btn btn-outline-boba mt-2">
-                                        <i class="bi bi-recycle me-1"></i> Pesan Layanan
-                                    </a>
-                                @else
-                                    <a href="#products" class="btn btn-outline-boba mt-2">
-                                        <i class="bi bi-bag me-1"></i> Lihat Produk
-                                    </a>
-                                @endif
-                            </div>
+                <div class="col-md-4">
+                    <div class="brand-card h-100 p-4">
+                        <div class="d-flex align-items-center gap-2 mb-3">
+                            <span class="logo-pill" style="background: linear-gradient(135deg,#1e293b,#475569);">T</span>
+                            <h4 class="fw-bold m-0">tsoecha.co</h4>
                         </div>
+                        <p class="text-muted">Brand fashion pria PT BOBA. Menyediakan kaos, kemeja, hoodie, jaket, celana, dan aksesoris untuk gaya pria modern Indonesia.</p>
+                        <div class="d-flex gap-2 flex-wrap mb-3">
+                            <span class="badge badge-soft-secondary">Kaos</span>
+                            <span class="badge badge-soft-secondary">Kemeja</span>
+                            <span class="badge badge-soft-secondary">Hoodie</span>
+                            <span class="badge badge-soft-secondary">Jaket</span>
+                        </div>
+                        <a href="#products" wire:click="setBrand('tsoecha.co')" class="btn btn-dark w-100">Lihat Produk Pria</a>
                     </div>
-                @endforeach
+                </div>
+                <div class="col-md-4">
+                    <div class="brand-card h-100 p-4">
+                        <div class="d-flex align-items-center gap-2 mb-3">
+                            <span class="logo-pill" style="background: linear-gradient(135deg,#ec4899,#f97316);">S</span>
+                            <h4 class="fw-bold m-0">sokyuut</h4>
+                        </div>
+                        <p class="text-muted">Brand fashion wanita PT BOBA. Blouse, dress, outer, hijab, rok, celana, dan aksesoris untuk gaya wanita Indonesia yang berkarakter.</p>
+                        <div class="d-flex gap-2 flex-wrap mb-3">
+                            <span class="badge badge-soft-secondary">Blouse</span>
+                            <span class="badge badge-soft-secondary">Dress</span>
+                            <span class="badge badge-soft-secondary">Hijab</span>
+                            <span class="badge badge-soft-secondary">Outer</span>
+                        </div>
+                        <a href="#products" wire:click="setBrand('sokyuut')" class="btn btn-boba-accent w-100">Lihat Produk Wanita</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="brand-card h-100 p-4">
+                        <div class="d-flex align-items-center gap-2 mb-3">
+                            <span class="logo-pill" style="background: linear-gradient(135deg,#16a34a,#65a30d);">T</span>
+                            <h4 class="fw-bold m-0">tos2bro</h4>
+                        </div>
+                        <p class="text-muted">Green Technology Holding Company. Jasa pengambilan sampah, pengelolaan sampah, pengolahan sampah organik, dan pembuatan bahan bakar kendaraan dari sampah organik.</p>
+                        <div class="d-flex gap-2 flex-wrap mb-3">
+                            <span class="badge badge-soft-success">Eco</span>
+                            <span class="badge badge-soft-success">Green</span>
+                            <span class="badge badge-soft-success">Sustainable</span>
+                        </div>
+                        <a href="#services" class="btn btn-boba w-100">Pesan Layanan</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    {{-- PRODUCTS PREVIEW --}}
-    <section id="products" class="py-5 bg-boba-light">
-        <div class="container py-3">
-            <div class="d-flex justify-content-between align-items-end mb-4 flex-wrap gap-2">
-                <div>
-                    <span class="text-uppercase small fw-bold text-boba">Produk Fashion</span>
-                    <h2 class="section-title h2 mb-0">Produk Pilihan tsoecha.co &amp; sokyuut</h2>
-                </div>
-                <a href="{{ url('/register') }}" class="btn btn-boba btn-sm"><i class="bi bi-bag me-1"></i> Belanja Sekarang</a>
+    {{-- Struktur --}}
+    <section id="struktur" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="section-eyebrow">Pendiri PT BOBA</span>
+                <h2 class="section-title mt-2">Struktur Perusahaan</h2>
+                <p class="text-muted">Pendiri dan pemegang kepercayaan arah strategis PT Bikin Orang Bahagia.</p>
             </div>
-            <div class="row g-4">
-                @forelse($fashionProducts as $p)
-                    <div class="col-6 col-md-4 col-lg-2">
-                        <div class="card product-card h-100 border-0 shadow-sm">
-                            <div class="placeholder-img"><i class="bi bi-bag-heart"></i></div>
-                            <div class="card-body p-3">
-                                <small class="text-secondary text-uppercase">{{ $p->brand->name }}</small>
-                                <div class="fw-semibold small mt-1" style="min-height:38px">{{ $p->name }}</div>
-                                <div class="text-boba fw-bold mt-1">Rp {{ number_format($p->price, 0, ',', '.') }}</div>
+            <div class="row g-4 justify-content-center">
+                @forelse($founders as $founder)
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card-boba p-4 h-100 text-center">
+                            <div class="founder-photo" @if($founder->photo) style="background-image:url('{{ asset('storage/'.$founder->photo) }}')" @endif>
+                                @if(! $founder->photo) <i class="bi bi-person"></i> @endif
                             </div>
+                            <h5 class="fw-bold mt-2 mb-1">{{ $founder->name }}</h5>
+                            <div class="text-success fw-semibold mb-2">{{ $founder->position }}</div>
+                            <p class="text-muted small mb-0">{{ $founder->description ?: 'Pendiri PT Bikin Orang Bahagia yang berkomitmen pada keberlanjutan.' }}</p>
                         </div>
                     </div>
                 @empty
-                    <div class="col-12"><p class="text-center text-secondary">Belum ada produk.</p></div>
+                    <div class="col-12 text-center text-muted">Belum ada data struktur perusahaan.</div>
                 @endforelse
             </div>
         </div>
     </section>
 
-    {{-- SERVICES (Ponpin) --}}
-    <section id="services" class="py-5">
-        <div class="container py-3">
-            <div class="text-center mb-4">
-                <span class="text-uppercase small fw-bold text-boba">Green Technology</span>
-                <h2 class="section-title display-6 mb-2">Layanan Ponpin</h2>
-                <p class="section-subtitle mx-auto" style="max-width:720px">
-                    Holding company green technology PT BOBA &mdash; pengelolaan sampah &amp; konversi sampah organik menjadi bahan bakar kendaraan.
-                </p>
+    {{-- Products --}}
+    <section id="products" class="py-5 bg-white">
+        <div class="container">
+            <div class="d-flex flex-column flex-md-row align-items-md-end justify-content-between gap-3 mb-4">
+                <div>
+                    <span class="section-eyebrow">Produk Unggulan</span>
+                    <h2 class="section-title mt-2 mb-0">Produk Fashion PT BOBA</h2>
+                </div>
+                <div class="d-flex gap-2 flex-wrap">
+                    <button wire:click="setBrand(null)" class="btn btn-sm {{ $brandFilter ? 'btn-outline-success' : 'btn-boba' }}">Semua</button>
+                    <button wire:click="setBrand('tsoecha.co')" class="btn btn-sm {{ $brandFilter === 'tsoecha.co' ? 'btn-dark' : 'btn-outline-dark' }}">tsoecha.co</button>
+                    <button wire:click="setBrand('sokyuut')" class="btn btn-sm {{ $brandFilter === 'sokyuut' ? 'btn-boba-accent' : 'btn-outline-warning' }}">sokyuut</button>
+                </div>
             </div>
-            <div class="row g-3">
-                @foreach($services as $s)
-                    <div class="col-md-6 col-lg-3">
-                        <div class="ecosystem-node h-100">
-                            <i class="bi bi-recycle text-success fs-3"></i>
-                            <h6 class="fw-bold mt-2">{{ $s->name }}</h6>
-                            <small class="esg-badge mb-2">{{ $s->category }}</small>
-                            <p class="small text-secondary mt-2 mb-3">{{ $s->description }}</p>
-                            <div class="fw-bold text-boba">Rp {{ number_format($s->price, 0, ',', '.') }} <small class="text-secondary fw-normal">/ {{ $s->unit }}</small></div>
-                            <a href="{{ url('/register') }}" class="btn btn-sm btn-outline-boba mt-3 w-100">
-                                <i class="bi bi-send me-1"></i> Pesan Layanan
-                            </a>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
-        </div>
-    </section>
-
-    {{-- STRUKTUR / FOUNDERS --}}
-    <section id="struktur" class="py-5 bg-boba-light">
-        <div class="container py-3">
-            <div class="text-center mb-4">
-                <span class="text-uppercase small fw-bold text-boba">Struktur Perusahaan</span>
-                <h2 class="section-title display-6 mb-2">Pendiri PT BOBA</h2>
-                <p class="section-subtitle">Tim profesional yang menggerakkan PT Bikin Orang Bahagia.</p>
-            </div>
-            <div class="row g-4 justify-content-center">
-                @foreach($founders as $founder)
+            <div class="row g-4">
+                @forelse($products as $product)
                     <div class="col-md-6 col-lg-4">
-                        <div class="founder-card card h-100 border-0">
-                            <div class="card-body p-4 text-center">
-                                @if($founder->photo)
-                                    <img src="{{ asset($founder->photo) }}" alt="{{ $founder->name }}" class="founder-photo mb-3">
+                        <div class="card-boba h-100">
+                            <div class="product-img" @if($product->image) style="background-image:url('{{ asset('storage/'.$product->image) }}')" @else @endif>
+                                @if(! $product->image) <i class="bi bi-image"></i> @endif
+                            </div>
+                            <div class="p-3">
+                                <div class="d-flex justify-content-between align-items-start gap-2 mb-2">
+                                    <h6 class="fw-bold mb-0">{{ $product->name }}</h6>
+                                    <span class="badge badge-soft-info">{{ $product->brand }}</span>
+                                </div>
+                                <div class="small text-muted mb-2"><i class="bi bi-tag"></i> {{ $product->category }} · <span class="text-capitalize">{{ $product->gender_category }}</span></div>
+                                <div class="fs-5 fw-bold text-success mb-3">Rp {{ number_format($product->price, 0, ',', '.') }}</div>
+                                <a href="{{ route('login') }}" class="btn btn-outline-success w-100 btn-sm">Login untuk Detail</a>
+                            </div>
+                        </div>
+                    </div>
+                @empty
+                    <div class="col-12 text-center text-muted py-4">Belum ada produk tersedia.</div>
+                @endforelse
+            </div>
+        </div>
+    </section>
+
+    {{-- Services --}}
+    <section id="services" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="section-eyebrow">Layanan tos2bro</span>
+                <h2 class="section-title mt-2">Green Technology Holding</h2>
+                <p class="text-muted">Layanan ramah lingkungan untuk rumah tangga, bisnis, dan industri.</p>
+            </div>
+            <div class="row g-4">
+                @forelse($services as $service)
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card-boba h-100 p-3">
+                            <div class="service-img mb-3 rounded-3">
+                                @if($service->image)
+                                    <div style="background-image:url('{{ asset('storage/'.$service->image) }}'); background-size:cover; width:100%; height:100%; border-radius:12px;"></div>
                                 @else
-                                    <div class="founder-photo mx-auto mb-3 d-flex align-items-center justify-content-center" style="background:#e9eef5;color:#94a3b8;">
-                                        <i class="bi bi-person-fill" style="font-size:3rem"></i>
-                                    </div>
+                                    <i class="bi bi-recycle text-success" style="font-size:3rem;"></i>
                                 @endif
-                                <h5 class="fw-bold mb-1">{{ $founder->name }}</h5>
-                                <span class="badge badge-soft-primary mb-3">{{ $founder->position }}</span>
-                                <p class="small text-secondary mb-0">{{ $founder->description }}</p>
+                            </div>
+                            <h6 class="fw-bold">{{ $service->name }}</h6>
+                            <span class="badge badge-soft-success mb-2">{{ str_replace('_', ' ', $service->service_type) }}</span>
+                            <p class="small text-muted">{{ \Illuminate\Support\Str::limit($service->description, 80) }}</p>
+                            <div class="fs-6 fw-bold text-success mt-auto">Mulai Rp {{ number_format($service->price, 0, ',', '.') }}</div>
+                            <a href="{{ route('login') }}" class="btn btn-boba btn-sm w-100 mt-2">Booking Service</a>
+                        </div>
+                    </div>
+                @empty
+                    <div class="col-12 text-center text-muted py-4">Belum ada layanan tersedia.</div>
+                @endforelse
+            </div>
+        </div>
+    </section>
+
+    {{-- Why Choose Us --}}
+    <section class="py-5 bg-white">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="section-eyebrow">Why Choose Us</span>
+                <h2 class="section-title mt-2">Mengapa Memilih PT BOBA?</h2>
+            </div>
+            <div class="row g-4">
+                @foreach([
+                    ['icon'=>'gem','color'=>'success','title'=>'Produk Fashion Berkualitas','desc'=>'Material premium, jahitan rapi, desain modern.'],
+                    ['icon'=>'shop','color'=>'warning','title'=>'Brand Lokal Terpercaya','desc'=>'Dukung produk Indonesia dengan standar global.'],
+                    ['icon'=>'tree','color'=>'success','title'=>'Gaya Hidup Ramah Lingkungan','desc'=>'Mendukung ekosistem green technology.'],
+                    ['icon'=>'recycle','color'=>'info','title'=>'Layanan Pengelolaan Sampah Modern','desc'=>'Sampah jadi energi lewat tos2bro.'],
+                    ['icon'=>'shield-check','color'=>'primary','title'=>'Transaksi Mudah & Aman','desc'=>'Multi metode pembayaran, aman & cepat.'],
+                    ['icon'=>'heart-pulse','color'=>'danger','title'=>'Mendukung Ekonomi Kreatif','desc'=>'Memberdayakan seller, UMKM, dan kreator lokal.'],
+                ] as $f)
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card-boba h-100 p-4">
+                            <i class="bi bi-{{ $f['icon'] }} fs-1 text-{{ $f['color'] }}"></i>
+                            <h6 class="fw-bold mt-3">{{ $f['title'] }}</h6>
+                            <p class="text-muted small mb-0">{{ $f['desc'] }}</p>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+    {{-- Partner --}}
+    <section id="partner" class="py-5" style="background: linear-gradient(135deg, rgba(22,163,74,.08), rgba(249,115,22,.08));">
+        <div class="container text-center">
+            <span class="section-eyebrow">Partner / Seller</span>
+            <h2 class="section-title mt-2">Bergabung Sebagai Mitra PT BOBA</h2>
+            <p class="text-muted">Menjadi seller fashion tsoecha.co / sokyuut atau penyedia jasa tos2bro? Daftar hari ini.</p>
+            <a href="{{ route('seller.register') }}" class="btn btn-boba btn-lg mt-2"><i class="bi bi-shop me-1"></i> Daftar Sebagai Seller</a>
+        </div>
+    </section>
+
+    {{-- Testimonials --}}
+    <section class="py-5 bg-white">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="section-eyebrow">Testimonial</span>
+                <h2 class="section-title mt-2">Kata Mereka tentang PT BOBA</h2>
+            </div>
+            <div class="row g-4">
+                @foreach([
+                    ['name'=>'Andi Pratama','role'=>'Pelanggan tsoecha.co','text'=>'Kualitas bahan kaosnya premium, jahitannya rapi, dan desainnya up-to-date. Worth every rupiah.'],
+                    ['name'=>'Sari Dewi','role'=>'Pelanggan sokyuut','text'=>'Dressnya cantik dan nyaman dipakai seharian. Packaging juga eco-friendly.'],
+                    ['name'=>'Yayasan Hijau','role'=>'Pengguna tos2bro','text'=>'Pengambilan sampah tepat waktu dan pengelolaan organiknya transparan. Lanjutkan!'],
+                ] as $t)
+                    <div class="col-md-4">
+                        <div class="card-boba p-4 h-100">
+                            <div class="text-warning mb-2">
+                                @for($i=0;$i<5;$i++)<i class="bi bi-star-fill"></i>@endfor
+                            </div>
+                            <p class="text-muted fst-italic">"{{ $t['text'] }}"</p>
+                            <div class="d-flex align-items-center gap-2 mt-3">
+                                <div class="rounded-circle bg-success text-white d-flex align-items-center justify-content-center" style="width:42px;height:42px;"><i class="bi bi-person"></i></div>
+                                <div>
+                                    <div class="fw-bold small">{{ $t['name'] }}</div>
+                                    <div class="text-muted small">{{ $t['role'] }}</div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -277,254 +321,68 @@
         </div>
     </section>
 
-    {{-- BUSINESS ECOSYSTEM --}}
-    <section class="py-5">
-        <div class="container py-3">
-            <div class="text-center mb-4">
-                <span class="text-uppercase small fw-bold text-boba">Business Ecosystem</span>
-                <h2 class="section-title display-6 mb-2">Ekosistem Bisnis PT BOBA</h2>
-            </div>
-            <div class="row g-3">
-                <div class="col-md-3">
-                    <div class="ecosystem-node h-100 text-center">
-                        <i class="bi bi-building text-boba fs-2"></i>
-                        <h6 class="fw-bold mt-2">Holding</h6>
-                        <p class="small text-secondary mb-0">PT Bikin Orang Bahagia</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="ecosystem-node h-100 text-center">
-                        <i class="bi bi-bag text-boba fs-2"></i>
-                        <h6 class="fw-bold mt-2">tsoecha.co</h6>
-                        <p class="small text-secondary mb-0">Fashion Pria — Tekstil &amp; Produk Olahan</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="ecosystem-node h-100 text-center">
-                        <i class="bi bi-handbag text-boba fs-2"></i>
-                        <h6 class="fw-bold mt-2">sokyuut</h6>
-                        <p class="small text-secondary mb-0">Fashion Wanita — Tekstil &amp; Aksesoris</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="ecosystem-node h-100 text-center">
-                        <i class="bi bi-recycle text-success fs-2"></i>
-                        <h6 class="fw-bold mt-2">Ponpin</h6>
-                        <p class="small text-secondary mb-0">Green Technology — Pengelolaan &amp; Konversi Sampah</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    {{-- INVESTMENT OPPORTUNITY --}}
-    <section class="py-5 bg-boba text-white">
-        <div class="container py-3">
-            <div class="row align-items-center g-4">
-                <div class="col-lg-7">
-                    <span class="badge bg-warning text-dark mb-2">Investment Opportunity</span>
-                    <h2 class="display-6 fw-bold">Peluang Investasi PT BOBA</h2>
-                    <p class="opacity-90">
-                        PT BOBA membuka peluang kerja sama strategis bagi investor nasional dan internasional.
-                        Dengan ekosistem fashion + green technology yang terintegrasi, PT BOBA memiliki
-                        potensi pertumbuhan tinggi di pasar lokal maupun ekspor.
-                    </p>
-                    <ul class="list-unstyled small">
-                        <li><i class="bi bi-check-circle-fill text-warning me-2"></i> Diversifikasi pendapatan: fashion + jasa lingkungan.</li>
-                        <li><i class="bi bi-check-circle-fill text-warning me-2"></i> Komitmen ESG &amp; ekonomi sirkular melalui Ponpin.</li>
-                        <li><i class="bi bi-check-circle-fill text-warning me-2"></i> Skalabilitas tinggi melalui marketplace digital.</li>
-                        <li><i class="bi bi-check-circle-fill text-warning me-2"></i> Tim pendiri berpengalaman lintas sektor.</li>
-                    </ul>
-                </div>
-                <div class="col-lg-5">
-                    <div class="bg-white text-dark p-4 rounded-4 shadow">
-                        <h5 class="fw-bold text-boba mb-3"><i class="bi bi-briefcase me-1"></i> Tertarik Berinvestasi?</h5>
-                        <p class="small text-secondary">Akses Investor Relations untuk profil lengkap, pitch deck, dan jadwal pertemuan.</p>
-                        <a href="{{ url('/investor-relations') }}" class="btn btn-boba w-100">
-                            <i class="bi bi-graph-up-arrow me-1"></i> Buka Investor Relations
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    {{-- SUSTAINABILITY / ESG --}}
-    <section class="py-5">
-        <div class="container py-3">
-            <div class="text-center mb-4">
-                <span class="esg-badge"><i class="bi bi-leaf"></i> Sustainability &amp; ESG</span>
-                <h2 class="section-title display-6 mt-2">Komitmen Hijau Lewat Ponpin</h2>
-                <p class="section-subtitle mx-auto" style="max-width:760px">
-                    Ponpin adalah holding green technology PT BOBA yang berkomitmen pada ekonomi sirkular &mdash;
-                    mengubah sampah menjadi nilai ekonomi sekaligus melindungi lingkungan.
-                </p>
-            </div>
-            <div class="row g-3">
-                <div class="col-md-3">
-                    <div class="ecosystem-node h-100 text-center">
-                        <i class="bi bi-trash text-success fs-2"></i>
-                        <h6 class="fw-bold mt-2">Pengambilan Sampah</h6>
-                        <p class="small text-secondary mb-0">Layanan jemput sampah rumah tangga &amp; korporat.</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="ecosystem-node h-100 text-center">
-                        <i class="bi bi-gear text-success fs-2"></i>
-                        <h6 class="fw-bold mt-2">Pengelolaan Sampah</h6>
-                        <p class="small text-secondary mb-0">Pemilahan, pengelolaan, dan pendampingan zero waste.</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="ecosystem-node h-100 text-center">
-                        <i class="bi bi-flower3 text-success fs-2"></i>
-                        <h6 class="fw-bold mt-2">Pengolahan Organik</h6>
-                        <p class="small text-secondary mb-0">Konversi sampah organik menjadi kompos &amp; pupuk.</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="ecosystem-node h-100 text-center">
-                        <i class="bi bi-fuel-pump text-success fs-2"></i>
-                        <h6 class="fw-bold mt-2">Bahan Bakar Hijau</h6>
-                        <p class="small text-secondary mb-0">Sampah organik menjadi bahan bakar kendaraan.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    {{-- VISION FOR GROWTH --}}
-    <section class="py-5 bg-boba-light">
-        <div class="container py-3">
-            <div class="row g-5 align-items-center">
-                <div class="col-lg-5">
-                    <span class="text-uppercase small fw-bold text-boba">Vision for Growth</span>
-                    <h2 class="section-title display-6">Visi Pertumbuhan Perusahaan</h2>
-                    <p class="section-subtitle">
-                        Roadmap PT BOBA: memperluas penetrasi marketplace, ekspansi brand fashion ke pasar
-                        Asia Tenggara, dan memperbesar dampak ESG Ponpin di skala kota dan regional.
-                    </p>
-                    <a href="{{ url('/investor-relations') }}" class="btn btn-boba">
-                        <i class="bi bi-rocket me-1"></i> Lihat Roadmap Investor
-                    </a>
-                </div>
-                <div class="col-lg-7">
-                    <div class="timeline ms-2">
-                        @foreach($milestones as $m)
-                            <div class="timeline-item">
-                                <div class="d-flex align-items-center gap-2 mb-1">
-                                    <span class="badge badge-soft-primary">{{ $m->year }}{{ $m->month ? ' · '.$m->month : '' }}</span>
-                                    <h6 class="fw-bold mb-0">{{ $m->title }}</h6>
-                                </div>
-                                <p class="small text-secondary mb-0">{{ $m->description }}</p>
-                            </div>
-                        @endforeach
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    {{-- PARTNER / SELLER --}}
-    <section id="partner" class="py-5">
-        <div class="container py-3">
-            <div class="row g-4 align-items-center">
+    {{-- Contact --}}
+    <section id="contact" class="py-5">
+        <div class="container">
+            <div class="row g-4">
                 <div class="col-lg-6">
-                    <span class="text-uppercase small fw-bold text-boba">Partner / Seller</span>
-                    <h2 class="section-title display-6">Bergabung sebagai Mitra Penjual</h2>
-                    <p class="section-subtitle">
-                        Daftarkan toko Anda sebagai seller resmi tsoecha.co, sokyuut, atau partner Ponpin.
-                        Nikmati ekosistem marketplace PT BOBA, manajemen produk &amp; layanan terpusat,
-                        serta dukungan branding profesional.
-                    </p>
-                    <a href="{{ url('/register/seller') }}" class="btn btn-boba">
-                        <i class="bi bi-shop me-1"></i> Daftar sebagai Seller
-                    </a>
+                    <span class="section-eyebrow">Kontak</span>
+                    <h2 class="section-title mt-2 mb-4">Hubungi PT BOBA</h2>
+                    <div class="card-boba p-4 mb-3">
+                        <div class="d-flex gap-3 align-items-start">
+                            <i class="bi bi-geo-alt-fill text-success fs-4"></i>
+                            <div>
+                                <h6 class="fw-bold mb-1">Alamat PT</h6>
+                                <p class="text-muted mb-0">Jl. Industri Tekstil No. 1, Surabaya, Jawa Timur, Indonesia.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-boba p-4 mb-3">
+                        <div class="d-flex gap-3 align-items-start">
+                            <i class="bi bi-envelope-fill text-success fs-4"></i>
+                            <div>
+                                <h6 class="fw-bold mb-1">Email</h6>
+                                <p class="text-muted mb-0">hello@ptboba.co.id</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-boba p-4 mb-3">
+                        <div class="d-flex gap-3 align-items-start">
+                            <i class="bi bi-whatsapp text-success fs-4"></i>
+                            <div>
+                                <h6 class="fw-bold mb-1">WhatsApp</h6>
+                                <p class="text-muted mb-0">+62 812-0000-0000</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-boba p-4">
+                        <div class="d-flex gap-3 align-items-start">
+                            <i class="bi bi-clock-fill text-success fs-4"></i>
+                            <div>
+                                <h6 class="fw-bold mb-1">Jam Operasional</h6>
+                                <p class="text-muted mb-0">Senin - Jumat: 08.00 - 17.00 WIB<br>Sabtu: 09.00 - 14.00 WIB</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-lg-6">
-                    <div class="row g-3">
-                        <div class="col-6">
-                            <div class="ecosystem-node h-100 text-center">
-                                <i class="bi bi-shield-check text-boba fs-3"></i>
-                                <h6 class="fw-bold mt-2">Brand Resmi</h6>
-                                <small class="text-secondary">Verifikasi internal PT BOBA</small>
+                    <div class="card-boba p-4">
+                        <h4 class="fw-bold mb-3">Form Kontak</h4>
+                        <form onsubmit="event.preventDefault(); alert('Terima kasih! Pesan Anda akan kami balas via email.')">
+                            <div class="mb-3">
+                                <label class="form-label small">Nama</label>
+                                <input class="form-control" required>
                             </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="ecosystem-node h-100 text-center">
-                                <i class="bi bi-graph-up text-boba fs-3"></i>
-                                <h6 class="fw-bold mt-2">Akses Pasar</h6>
-                                <small class="text-secondary">Marketplace + buyer terverifikasi</small>
+                            <div class="mb-3">
+                                <label class="form-label small">Email</label>
+                                <input type="email" class="form-control" required>
                             </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="ecosystem-node h-100 text-center">
-                                <i class="bi bi-headset text-boba fs-3"></i>
-                                <h6 class="fw-bold mt-2">Support</h6>
-                                <small class="text-secondary">Operasional &amp; logistik</small>
+                            <div class="mb-3">
+                                <label class="form-label small">Pesan</label>
+                                <textarea class="form-control" rows="4" required></textarea>
                             </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="ecosystem-node h-100 text-center">
-                                <i class="bi bi-cash-coin text-boba fs-3"></i>
-                                <h6 class="fw-bold mt-2">Pembayaran</h6>
-                                <small class="text-secondary">Transparansi transaksi</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    {{-- CONTACT --}}
-    <section id="contact" class="py-5 bg-boba-light">
-        <div class="container py-3">
-            <div class="row g-5 align-items-start">
-                <div class="col-lg-5">
-                    <span class="text-uppercase small fw-bold text-boba">Kontak</span>
-                    <h2 class="section-title display-6">Hubungi PT BOBA</h2>
-                    <p class="section-subtitle">
-                        Untuk pertanyaan kerja sama, kemitraan, atau informasi umum,
-                        silakan kirim pesan melalui form di samping atau kontak langsung.
-                    </p>
-                    <ul class="list-unstyled small">
-                        <li class="mb-1"><i class="bi bi-geo-alt text-boba me-2"></i> Surabaya, Indonesia</li>
-                        <li class="mb-1"><i class="bi bi-envelope text-boba me-2"></i> hello@ptboba.co.id</li>
-                        <li class="mb-1"><i class="bi bi-telephone text-boba me-2"></i> +62 812-0000-0000</li>
-                    </ul>
-                </div>
-                <div class="col-lg-7">
-                    <div class="card border-0 shadow-sm">
-                        <div class="card-body p-4">
-                            @if($contactSent)
-                                <div class="alert alert-success">
-                                    <i class="bi bi-check-circle me-1"></i> Terima kasih! Pesan Anda telah kami terima.
-                                </div>
-                            @endif
-                            <form wire:submit="submitContact" class="row g-3">
-                                <div class="col-md-6">
-                                    <label class="form-label small fw-semibold">Nama</label>
-                                    <input type="text" wire:model="contactName" class="form-control @error('contactName') is-invalid @enderror" placeholder="Nama lengkap">
-                                    @error('contactName') <small class="text-danger">{{ $message }}</small> @enderror
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="form-label small fw-semibold">Email</label>
-                                    <input type="email" wire:model="contactEmail" class="form-control @error('contactEmail') is-invalid @enderror" placeholder="email@domain.com">
-                                    @error('contactEmail') <small class="text-danger">{{ $message }}</small> @enderror
-                                </div>
-                                <div class="col-12">
-                                    <label class="form-label small fw-semibold">Pesan</label>
-                                    <textarea wire:model="contactMessage" class="form-control @error('contactMessage') is-invalid @enderror" rows="5" placeholder="Tuliskan pesan Anda..."></textarea>
-                                    @error('contactMessage') <small class="text-danger">{{ $message }}</small> @enderror
-                                </div>
-                                <div class="col-12">
-                                    <button type="submit" class="btn btn-boba">
-                                        <i class="bi bi-send me-1"></i> Kirim Pesan
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
+                            <button class="btn btn-boba w-100" type="submit"><i class="bi bi-send"></i> Kirim Pesan</button>
+                        </form>
                     </div>
                 </div>
             </div>

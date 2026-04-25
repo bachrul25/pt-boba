@@ -5,117 +5,111 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title', 'PT Bikin Orang Bahagia (PT BOBA)')</title>
-    <meta name="description" content="PT Bikin Orang Bahagia (PT BOBA) — Industri Tekstil, Produk Olahan, Fashion Brand (tsoecha.co, sokyuut), dan Layanan Green Technology (Ponpin).">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --boba-primary: #0d3b66;
-            --boba-secondary: #faa916;
-            --boba-accent: #2ec4b6;
-            --boba-dark: #051e3e;
-            --boba-light: #f5f7fb;
+            --boba-primary: #16a34a;
+            --boba-primary-dark: #15803d;
+            --boba-accent: #f97316;
+            --boba-dark: #0f172a;
+            --boba-muted: #64748b;
         }
-        body {
-            font-family: 'Plus Jakarta Sans', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-            color: #1f2937;
-            background: #ffffff;
-        }
-        .text-boba { color: var(--boba-primary) !important; }
-        .bg-boba { background: var(--boba-primary) !important; color: #fff; }
-        .bg-boba-dark { background: var(--boba-dark) !important; color: #fff; }
-        .bg-boba-light { background: var(--boba-light) !important; }
-        .btn-boba { background: var(--boba-primary); color: #fff; border: none; }
-        .btn-boba:hover { background: var(--boba-dark); color: #fff; }
-        .btn-outline-boba { border: 1px solid var(--boba-primary); color: var(--boba-primary); background: transparent; }
-        .btn-outline-boba:hover { background: var(--boba-primary); color: #fff; }
-        .btn-accent { background: var(--boba-secondary); color: #fff; border: none; }
-        .btn-accent:hover { background: #d98b08; color: #fff; }
-        .navbar-boba { background: rgba(255,255,255,0.95); backdrop-filter: saturate(180%) blur(8px); border-bottom: 1px solid rgba(13,59,102,.08); }
-        .navbar-boba .nav-link { color: #1f2937; font-weight: 500; }
+        body { font-family: 'Inter', system-ui, sans-serif; background: #f8fafc; color: #0f172a; }
+        .navbar-boba { background: #ffffff; border-bottom: 1px solid #e2e8f0; }
+        .navbar-boba .nav-link { font-weight: 500; color: #334155; }
         .navbar-boba .nav-link:hover, .navbar-boba .nav-link.active { color: var(--boba-primary); }
-        .hero {
-            background: linear-gradient(135deg, var(--boba-dark) 0%, var(--boba-primary) 60%, #1565c0 100%);
-            color: #fff; position: relative; overflow: hidden;
-        }
-        .hero::before {
-            content: ""; position: absolute; right: -120px; top: -120px; width: 380px; height: 380px;
-            background: radial-gradient(circle, rgba(250,169,22,.45), transparent 70%); border-radius: 50%;
-        }
-        .hero::after {
-            content: ""; position: absolute; left: -100px; bottom: -120px; width: 320px; height: 320px;
-            background: radial-gradient(circle, rgba(46,196,182,.35), transparent 70%); border-radius: 50%;
-        }
         .logo-pill {
             display: inline-flex; align-items: center; justify-content: center;
-            width: 44px; height: 44px; border-radius: 12px;
+            width: 40px; height: 40px; border-radius: 12px;
             background: linear-gradient(135deg, var(--boba-primary), var(--boba-accent));
-            color: #fff; font-weight: 700; letter-spacing: .5px;
+            color: #fff; font-weight: 800; font-size: 1.1rem;
+            box-shadow: 0 4px 14px rgba(22,163,74,.35);
         }
-        .brand-card { transition: transform .25s ease, box-shadow .25s ease; }
-        .brand-card:hover { transform: translateY(-4px); box-shadow: 0 14px 30px rgba(2,12,27,.10); }
-        .founder-card { transition: transform .25s ease, box-shadow .25s ease; border: 1px solid #eef2f7; }
-        .founder-card:hover { transform: translateY(-4px); box-shadow: 0 16px 36px rgba(2,12,27,.12); }
+        .logo-pill-lg { width: 64px; height: 64px; border-radius: 20px; font-size: 1.8rem; }
+        .btn-boba { background: var(--boba-primary); color: #fff; border: none; }
+        .btn-boba:hover { background: var(--boba-primary-dark); color: #fff; }
+        .btn-boba-accent { background: var(--boba-accent); color: #fff; border: none; }
+        .btn-boba-accent:hover { background: #ea580c; color: #fff; }
+        .hero-boba {
+            background: linear-gradient(135deg, rgba(22,163,74,.08), rgba(249,115,22,.08)), #ffffff;
+            padding: 4.5rem 0;
+        }
+        .section-title { font-weight: 800; letter-spacing: -.02em; }
+        .section-eyebrow { color: var(--boba-primary); font-weight: 600; text-transform: uppercase; letter-spacing: .08em; font-size: .8rem; }
+        .card-boba { border: 1px solid #e2e8f0; border-radius: 18px; transition: transform .2s, box-shadow .2s; }
+        .card-boba:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(15,23,42,.08); }
+        .brand-card { border-radius: 18px; overflow: hidden; border: 1px solid #e2e8f0; background: #fff; }
         .founder-photo {
-            width: 140px; height: 140px; object-fit: cover; border-radius: 50%;
-            border: 4px solid #fff; box-shadow: 0 8px 22px rgba(2,12,27,.12);
-            background: #e9eef5;
+            width: 140px; height: 140px; border-radius: 50%;
+            background: linear-gradient(135deg, #e0f2fe, #fef3c7);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 3rem; color: #0f172a; font-weight: 700;
+            margin: 0 auto 1rem;
+            background-size: cover; background-position: center;
         }
-        .stat-card { border: 1px solid #e9ecef; border-radius: 16px; }
-        .stat-value { font-size: 2.2rem; font-weight: 800; color: var(--boba-primary); line-height: 1; }
-        .section-title { font-weight: 800; color: var(--boba-dark); }
-        .section-subtitle { color: #5b6b80; }
-        .ecosystem-node {
-            border-radius: 14px; padding: 1.25rem; background: #fff;
-            border: 1px solid #e9ecef; height: 100%;
-        }
-        .timeline { position: relative; padding-left: 2rem; }
-        .timeline::before {
-            content: ""; position: absolute; left: .65rem; top: 0; bottom: 0;
-            width: 2px; background: linear-gradient(var(--boba-primary), var(--boba-accent));
-        }
-        .timeline-item { position: relative; padding-bottom: 1.5rem; }
-        .timeline-item::before {
-            content: ""; position: absolute; left: -1.55rem; top: .35rem;
-            width: 14px; height: 14px; border-radius: 50%;
-            background: var(--boba-secondary); box-shadow: 0 0 0 4px rgba(250,169,22,.18);
-        }
-        footer {
-            background: var(--boba-dark); color: #cbd5e1;
-        }
-        footer a { color: #cbd5e1; text-decoration: none; }
-        footer a:hover { color: #fff; }
-        .product-card img { height: 180px; object-fit: cover; }
-        .placeholder-img {
-            width: 100%; height: 180px; display:flex; align-items:center; justify-content:center;
-            background: linear-gradient(135deg,#f1f5f9,#e2e8f0); color:#94a3b8; font-size:2rem;
-        }
-        .esg-badge {
-            display: inline-flex; align-items: center; gap: .35rem;
-            background: rgba(46,196,182,.12); color:#0f8a82; padding: .35rem .65rem;
-            border-radius: 999px; font-weight: 600; font-size: .85rem;
-        }
+        .sidebar-boba { min-height: calc(100vh - 62px); background: #ffffff; border-right: 1px solid #e2e8f0; padding: 1.5rem 0; }
+        .sidebar-boba .nav-link { color: #475569; border-radius: 10px; margin: 2px 10px; padding: .55rem .9rem; }
+        .sidebar-boba .nav-link:hover { background: #f1f5f9; color: var(--boba-primary); }
+        .sidebar-boba .nav-link.active { background: var(--boba-primary); color: #fff; }
+        .stat-card { border-radius: 16px; padding: 1.2rem 1.4rem; background: #fff; border: 1px solid #e2e8f0; }
+        .stat-card .stat-num { font-size: 1.8rem; font-weight: 800; }
+        footer.boba-footer { background: #0f172a; color: #cbd5e1; padding: 3rem 0 1.5rem; }
+        footer.boba-footer a { color: #e2e8f0; text-decoration: none; }
+        footer.boba-footer a:hover { color: #fff; }
+        .badge-soft-success { background: #dcfce7; color: #166534; }
+        .badge-soft-warning { background: #fef3c7; color: #92400e; }
+        .badge-soft-danger { background: #fee2e2; color: #991b1b; }
+        .badge-soft-info { background: #dbeafe; color: #1e40af; }
+        .badge-soft-secondary { background: #e2e8f0; color: #334155; }
+        .product-img, .service-img { height: 190px; background: #f1f5f9; background-size: cover; background-position: center; border-radius: 12px 12px 0 0; display: flex; align-items: center; justify-content: center; color: #94a3b8; font-size: 2.2rem; }
+        .auth-card { max-width: 460px; margin: 3rem auto; border-radius: 20px; border: 1px solid #e2e8f0; background: #fff; padding: 2.2rem; box-shadow: 0 10px 40px rgba(15,23,42,.06); }
     </style>
     @livewireStyles
-    @stack('head')
 </head>
 <body>
-    @include('partials.navbar')
+    @php
+        $user = auth()->user();
+        $role = $user?->role;
+    @endphp
+
+    @if(! ($hideNavbar ?? false))
+        @include('partials.navbar', ['role' => $role])
+    @endif
 
     <main>
-        {{ $slot ?? '' }}
-        @yield('content')
+        {{ $slot }}
     </main>
 
-    @include('partials.footer')
+    @if(! ($hideFooter ?? false))
+        @include('partials.footer')
+    @endif
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     @livewireScripts
-    @stack('scripts')
+
+    @if (session('success'))
+        <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 1080;">
+            <div class="toast show align-items-center text-bg-success border-0" role="alert">
+                <div class="d-flex">
+                    <div class="toast-body">{{ session('success') }}</div>
+                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+                </div>
+            </div>
+        </div>
+    @endif
+    @if (session('error'))
+        <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 1080;">
+            <div class="toast show align-items-center text-bg-danger border-0" role="alert">
+                <div class="d-flex">
+                    <div class="toast-body">{{ session('error') }}</div>
+                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+                </div>
+            </div>
+        </div>
+    @endif
 </body>
 </html>

@@ -15,43 +15,44 @@ class LoginComponent extends Component
 
     public bool $remember = false;
 
+    protected array $rules = [
+        'email' => 'required|email',
+        'password' => 'required|min:6',
+    ];
+
+    public function mount(): void
+    {
+        if (Auth::check()) {
+            $this->redirectToDashboard();
+        }
+    }
+
     public function login()
     {
-        $credentials = $this->validate([
-            'email' => 'required|email',
-            'password' => 'required|string|min:6',
-        ]);
+        $data = $this->validate();
 
-        if (! Auth::attempt($credentials, $this->remember)) {
+        if (! Auth::attempt(['email' => $data['email'], 'password' => $data['password']], $this->remember)) {
             $this->addError('email', 'Email atau password salah.');
 
             return;
         }
 
-        $user = Auth::user();
-        if (! $user->is_active) {
-            Auth::logout();
-            $this->addError('email', 'Akun Anda nonaktif. Hubungi admin PT BOBA.');
+        request()->session()->regenerate();
 
-            return;
-        }
-
-        session()->regenerate();
-
-        return $this->redirectByRole($user->role);
+        return $this->redirectToDashboard();
     }
 
-    private function redirectByRole(string $role)
+    protected function redirectToDashboard()
     {
-        return match ($role) {
-            'admin' => $this->redirect('/admin', navigate: false),
-            'seller' => $this->redirect('/seller', navigate: false),
-            default => $this->redirect('/buyer', navigate: false),
+        return match (Auth::user()->role) {
+            'admin' => redirect()->route('admin.dashboard'),
+            'seller' => redirect()->route('seller.dashboard'),
+            default => redirect()->route('buyer.dashboard'),
         };
     }
 
-    #[Layout('layouts.app')]
     #[Title('Login - PT BOBA')]
+    #[Layout('layouts.app')]
     public function render()
     {
         return view('livewire.auth.login-component');

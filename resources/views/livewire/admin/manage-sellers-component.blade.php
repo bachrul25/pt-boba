@@ -1,39 +1,64 @@
-@section('page-title', 'Manage Sellers')
-<div>
-    @if(session('msg'))<div class="alert alert-success py-2">{{ session('msg') }}</div>@endif
+<div class="container-fluid">
+    <div class="row g-0">
+        @include('partials.admin-sidebar')
+        <main class="col-md-9 col-lg-10 p-4">
+            <div class="mb-4">
+                <h3 class="fw-bold mb-1">Kelola Seller</h3>
+                <p class="text-muted">Approve, reject, atau hapus data seller.</p>
+            </div>
 
-    <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
-        <h5 class="fw-bold mb-0">Mitra Seller PT BOBA</h5>
-        <input wire:model.live.debounce.300ms="search" class="form-control form-control-sm" style="max-width:280px" placeholder="Cari seller...">
-    </div>
+            <div class="card-boba p-3 mb-3">
+                <div class="row g-2">
+                    <div class="col-md-6">
+                        <input wire:model.live.debounce.400ms="search" class="form-control" placeholder="Cari nama atau email seller...">
+                    </div>
+                    <div class="col-md-3">
+                        <select wire:model.live="status" class="form-select">
+                            <option value="">Semua Status</option>
+                            <option value="pending">Pending</option>
+                            <option value="approved">Approved</option>
+                            <option value="rejected">Rejected</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
 
-    <div class="card">
-        <div class="table-responsive">
-            <table class="table table-sm align-middle mb-0">
-                <thead><tr><th>Nama Toko</th><th>Pemilik</th><th>Email</th><th>Telepon</th><th>Produk</th><th>Layanan</th><th>Status</th><th></th></tr></thead>
-                <tbody>
-                    @forelse($sellers as $s)
-                        <tr>
-                            <td class="fw-semibold">{{ $s->store_name ?: '—' }}</td>
-                            <td>{{ $s->name }}</td>
-                            <td><small>{{ $s->email }}</small></td>
-                            <td><small>{{ $s->phone ?: '-' }}</small></td>
-                            <td>{{ $s->products_count }}</td>
-                            <td>{{ $s->services_count }}</td>
-                            <td>
-                                @if($s->is_active)<span class="badge badge-soft-success">Aktif</span>
-                                @else <span class="badge badge-soft-danger">Nonaktif</span>@endif
-                            </td>
-                            <td class="text-end">
-                                <button wire:click="toggleActive({{ $s->id }})" class="btn btn-sm btn-outline-secondary"><i class="bi bi-toggle2-on"></i></button>
-                                <button wire:click="delete({{ $s->id }})" wire:confirm="Hapus seller?" class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
-                            </td>
-                        </tr>
-                    @empty
-                        <tr><td colspan="8" class="text-center small text-secondary py-3">Belum ada seller.</td></tr>
-                    @endforelse
-                </tbody>
-            </table>
-        </div>
+            <div class="card-boba p-3">
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle">
+                        <thead><tr><th>#</th><th>Nama</th><th>Email</th><th>Toko</th><th>Status</th><th>Aksi</th></tr></thead>
+                        <tbody>
+                            @forelse($sellers as $s)
+                                <tr>
+                                    <td>{{ $s->id }}</td>
+                                    <td class="fw-semibold">{{ $s->name }}</td>
+                                    <td>{{ $s->email }}</td>
+                                    <td>
+                                        <div>{{ $s->sellerProfile?->shop_name ?? '-' }}</div>
+                                        <div class="small text-muted">{{ \Illuminate\Support\Str::limit($s->sellerProfile?->shop_description, 50) }}</div>
+                                    </td>
+                                    <td>
+                                        @php $status = $s->sellerProfile?->status ?? 'pending'; @endphp
+                                        <span class="badge badge-soft-{{ match($status){'approved'=>'success','rejected'=>'danger',default=>'warning'} }}">{{ $status }}</span>
+                                    </td>
+                                    <td>
+                                        @if($status !== 'approved')
+                                            <button class="btn btn-sm btn-success" wire:click="approve({{ $s->id }})"><i class="bi bi-check-lg"></i> Approve</button>
+                                        @endif
+                                        @if($status !== 'rejected')
+                                            <button class="btn btn-sm btn-warning" wire:click="reject({{ $s->id }})"><i class="bi bi-x-lg"></i> Reject</button>
+                                        @endif
+                                        <button class="btn btn-sm btn-danger" wire:click="destroy({{ $s->id }})" wire:confirm="Hapus seller ini?"><i class="bi bi-trash"></i></button>
+                                    </td>
+                                </tr>
+                            @empty
+                                <tr><td colspan="6" class="text-center text-muted">Belum ada seller.</td></tr>
+                            @endforelse
+                        </tbody>
+                    </table>
+                </div>
+                <div>{{ $sellers->links() }}</div>
+            </div>
+        </main>
     </div>
 </div>
