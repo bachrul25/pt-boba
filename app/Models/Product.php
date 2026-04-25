@@ -4,34 +4,43 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Product extends Model
 {
     protected $fillable = [
-        'brand_id',
         'seller_id',
+        'brand',
+        'gender_category',
         'name',
-        'slug',
-        'category',
         'description',
         'price',
         'stock',
+        'category',
         'image',
-        'is_active',
+        'status',
     ];
 
-    protected $casts = [
-        'price' => 'decimal:2',
-        'is_active' => 'boolean',
-    ];
-
-    public function brand(): BelongsTo
+    protected function casts(): array
     {
-        return $this->belongsTo(Brand::class);
+        return [
+            'price' => 'decimal:2',
+            'stock' => 'integer',
+        ];
     }
 
     public function seller(): BelongsTo
     {
         return $this->belongsTo(User::class, 'seller_id');
+    }
+
+    public function carts(): HasMany
+    {
+        return $this->hasMany(Cart::class);
+    }
+
+    public function orderItems(): HasMany
+    {
+        return $this->hasMany(OrderItem::class);
     }
 }

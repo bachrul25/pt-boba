@@ -1,86 +1,79 @@
 <?php
 
-use App\Livewire\Admin;
+use App\Livewire\Admin\AdminDashboardComponent;
+use App\Livewire\Admin\AdminLoginComponent;
+use App\Livewire\Admin\ManageCompanyStructureComponent;
+use App\Livewire\Admin\ManageProductsComponent as AdminManageProductsComponent;
+use App\Livewire\Admin\ManageSellersComponent;
+use App\Livewire\Admin\ManageServicesComponent as AdminManageServicesComponent;
+use App\Livewire\Admin\ViewReportsComponent as AdminViewReportsComponent;
 use App\Livewire\Auth\LoginComponent;
-use App\Livewire\Auth\RegisterBuyerComponent;
-use App\Livewire\Auth\RegisterSellerComponent;
-use App\Livewire\Auth\RoleSelectComponent;
-use App\Livewire\Buyer;
+use App\Livewire\Auth\RegisterComponent;
+use App\Livewire\Buyer\BuyerDashboardComponent;
+use App\Livewire\Buyer\CartComponent;
+use App\Livewire\Buyer\CheckoutComponent;
+use App\Livewire\Buyer\ProductDetailComponent;
+use App\Livewire\Buyer\ProductListComponent;
+use App\Livewire\Buyer\ServiceBookingComponent;
+use App\Livewire\Buyer\ServiceListComponent;
+use App\Livewire\Buyer\ServiceTrackingComponent;
 use App\Livewire\HomePageComponent;
-use App\Livewire\InvestorRelationsComponent;
 use App\Livewire\LandingPageComponent;
-use App\Livewire\Seller;
-use Illuminate\Http\Request;
+use App\Livewire\Seller\ManageProductsComponent as SellerManageProductsComponent;
+use App\Livewire\Seller\ManageServicesComponent as SellerManageServicesComponent;
+use App\Livewire\Seller\SellerDashboardComponent;
+use App\Livewire\Seller\SellerProfileComponent;
+use App\Livewire\Seller\SellerRegisterComponent;
+use App\Livewire\Seller\ViewReportsComponent as SellerViewReportsComponent;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| PT BOBA Web Routes — semua route langsung ke Livewire Component (tanpa Controller)
-|--------------------------------------------------------------------------
-*/
-
-// Public pages
+// Public
 Route::get('/', LandingPageComponent::class)->name('landing');
 Route::get('/home', HomePageComponent::class)->name('home');
-Route::get('/investor-relations', InvestorRelationsComponent::class)->name('investor');
 
-// Auth (manual via Livewire components, no Controllers)
-Route::middleware('guest')->group(function () {
-    Route::get('/login', LoginComponent::class)->name('login');
-    Route::get('/register', RoleSelectComponent::class)->name('register');
-    Route::get('/register/buyer', RegisterBuyerComponent::class)->name('register.buyer');
-    Route::get('/register/seller', RegisterSellerComponent::class)->name('register.seller');
-});
+// Auth (guest)
+Route::get('/login', LoginComponent::class)->name('login');
+Route::get('/register', RegisterComponent::class)->name('register');
+Route::get('/seller/register', SellerRegisterComponent::class)->name('seller.register');
+Route::get('/admin/login', AdminLoginComponent::class)->name('admin.login');
 
-// Logout via inline closure (still no controller class)
-Route::post('/logout', function (Request $request) {
+// Logout
+Route::match(['get', 'post'], '/logout', function () {
     Auth::logout();
-    $request->session()->invalidate();
-    $request->session()->regenerateToken();
+    request()->session()->invalidate();
+    request()->session()->regenerateToken();
 
-    return redirect('/');
+    return redirect('/login');
 })->name('logout');
 
-// Authenticated dashboard router
-Route::middleware('auth')->get('/dashboard', function () {
-    $u = Auth::user();
-
-    return match ($u->role) {
-        'admin' => redirect('/admin'),
-        'seller' => redirect('/seller'),
-        default => redirect('/buyer'),
-    };
-})->name('dashboard');
-
-// Admin (role enforced inside each component via mount())
-Route::middleware(['auth'])->prefix('admin')->group(function () {
-    Route::get('/', Admin\DashboardComponent::class)->name('admin.dashboard');
-    Route::get('/founders', Admin\ManageFoundersComponent::class)->name('admin.founders');
-    Route::get('/brands', Admin\ManageBrandsComponent::class)->name('admin.brands');
-    Route::get('/products', Admin\ManageProductsComponent::class)->name('admin.products');
-    Route::get('/services', Admin\ManageServicesComponent::class)->name('admin.services');
-    Route::get('/sellers', Admin\ManageSellersComponent::class)->name('admin.sellers');
-    Route::get('/orders', Admin\ManageOrdersComponent::class)->name('admin.orders');
-    Route::get('/investor-inquiries', Admin\ManageInvestorInquiriesComponent::class)->name('admin.investor');
-    Route::get('/documents', Admin\ManageCompanyDocumentsComponent::class)->name('admin.documents');
-    Route::get('/milestones', Admin\ManageMilestonesComponent::class)->name('admin.milestones');
-    Route::get('/impact-metrics', Admin\ManageImpactMetricsComponent::class)->name('admin.metrics');
+// Admin routes
+Route::middleware(['auth', 'role:admin'])->prefix('admin')->group(function () {
+    Route::get('/dashboard', AdminDashboardComponent::class)->name('admin.dashboard');
+    Route::get('/company-structure', ManageCompanyStructureComponent::class)->name('admin.company-structure');
+    Route::get('/sellers', ManageSellersComponent::class)->name('admin.sellers');
+    Route::get('/products', AdminManageProductsComponent::class)->name('admin.products');
+    Route::get('/services', AdminManageServicesComponent::class)->name('admin.services');
+    Route::get('/reports', AdminViewReportsComponent::class)->name('admin.reports');
 });
 
-// Buyer (role enforced inside each component via mount())
-Route::middleware(['auth'])->prefix('buyer')->group(function () {
-    Route::get('/', Buyer\DashboardComponent::class)->name('buyer.dashboard');
-    Route::get('/browse', Buyer\BrowseComponent::class)->name('buyer.browse');
-    Route::get('/services', Buyer\ServicesComponent::class)->name('buyer.services');
-    Route::get('/orders', Buyer\OrdersComponent::class)->name('buyer.orders');
-    Route::get('/service-requests', Buyer\ServiceRequestsComponent::class)->name('buyer.requests');
+// Buyer routes
+Route::middleware(['auth', 'role:buyer'])->prefix('buyer')->group(function () {
+    Route::get('/dashboard', BuyerDashboardComponent::class)->name('buyer.dashboard');
+    Route::get('/products', ProductListComponent::class)->name('buyer.products');
+    Route::get('/products/{id}', ProductDetailComponent::class)->name('buyer.product.detail');
+    Route::get('/cart', CartComponent::class)->name('buyer.cart');
+    Route::get('/checkout', CheckoutComponent::class)->name('buyer.checkout');
+    Route::get('/services', ServiceListComponent::class)->name('buyer.services');
+    Route::get('/services/{id}/booking', ServiceBookingComponent::class)->name('buyer.service.booking');
+    Route::get('/service-tracking/{id?}', ServiceTrackingComponent::class)->name('buyer.service.tracking');
 });
 
-// Seller (role enforced inside each component via mount())
-Route::middleware(['auth'])->prefix('seller')->group(function () {
-    Route::get('/', Seller\DashboardComponent::class)->name('seller.dashboard');
-    Route::get('/products', Seller\ProductsComponent::class)->name('seller.products');
-    Route::get('/services', Seller\ServicesComponent::class)->name('seller.services');
-    Route::get('/orders', Seller\OrdersComponent::class)->name('seller.orders');
+// Seller routes
+Route::middleware(['auth', 'role:seller'])->prefix('seller')->group(function () {
+    Route::get('/dashboard', SellerDashboardComponent::class)->name('seller.dashboard');
+    Route::get('/profile', SellerProfileComponent::class)->name('seller.profile');
+    Route::get('/products', SellerManageProductsComponent::class)->name('seller.products');
+    Route::get('/services', SellerManageServicesComponent::class)->name('seller.services');
+    Route::get('/reports', SellerViewReportsComponent::class)->name('seller.reports');
 });

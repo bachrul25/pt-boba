@@ -2,15 +2,14 @@
 
 namespace App\Models;
 
-use Database\Factories\UserFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
-    /** @use HasFactory<UserFactory> */
     use HasFactory, Notifiable;
 
     protected $fillable = [
@@ -20,9 +19,6 @@ class User extends Authenticatable
         'role',
         'phone',
         'address',
-        'store_name',
-        'avatar',
-        'is_active',
     ];
 
     protected $hidden = [
@@ -33,9 +29,7 @@ class User extends Authenticatable
     protected function casts(): array
     {
         return [
-            'email_verified_at' => 'datetime',
             'password' => 'hashed',
-            'is_active' => 'boolean',
         ];
     }
 
@@ -54,6 +48,11 @@ class User extends Authenticatable
         return $this->role === 'seller';
     }
 
+    public function sellerProfile(): HasOne
+    {
+        return $this->hasOne(SellerProfile::class);
+    }
+
     public function products(): HasMany
     {
         return $this->hasMany(Product::class, 'seller_id');
@@ -64,13 +63,18 @@ class User extends Authenticatable
         return $this->hasMany(Service::class, 'seller_id');
     }
 
+    public function carts(): HasMany
+    {
+        return $this->hasMany(Cart::class, 'buyer_id');
+    }
+
     public function orders(): HasMany
     {
         return $this->hasMany(Order::class, 'buyer_id');
     }
 
-    public function serviceRequests(): HasMany
+    public function serviceBookings(): HasMany
     {
-        return $this->hasMany(ServiceRequest::class, 'buyer_id');
+        return $this->hasMany(ServiceBooking::class, 'buyer_id');
     }
 }

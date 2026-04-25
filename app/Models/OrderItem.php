@@ -10,16 +10,20 @@ class OrderItem extends Model
     protected $fillable = [
         'order_id',
         'product_id',
-        'product_name',
-        'price',
+        'seller_id',
         'quantity',
+        'price',
         'subtotal',
     ];
 
-    protected $casts = [
-        'price' => 'decimal:2',
-        'subtotal' => 'decimal:2',
-    ];
+    protected function casts(): array
+    {
+        return [
+            'quantity' => 'integer',
+            'price' => 'decimal:2',
+            'subtotal' => 'decimal:2',
+        ];
+    }
 
     public function order(): BelongsTo
     {
@@ -29,5 +33,10 @@ class OrderItem extends Model
     public function product(): BelongsTo
     {
         return $this->belongsTo(Product::class);
+    }
+
+    public function seller(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'seller_id');
     }
 }
