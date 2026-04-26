@@ -10,10 +10,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --boba-primary: #0d3b66;
-            --boba-secondary: #faa916;
-            --boba-accent: #2ec4b6;
-            --boba-dark: #051e3e;
+            --boba-primary: #15803d;
+            --boba-secondary: #f5b400;
+            --boba-accent: #34d399;
+            --boba-dark: #064e2c;
         }
         body { font-family: 'Plus Jakarta Sans', sans-serif; background: #f5f7fb; }
         .sidebar {
@@ -30,9 +30,9 @@
         .card { border: 1px solid #eef2f7; border-radius: 12px; }
         .stat-mini { border-radius: 12px; }
         .table thead th { background: #f8fafc; font-weight: 600; }
-        .badge-soft-primary { background: rgba(13,59,102,.1); color: #0d3b66; }
+        .badge-soft-primary { background: rgba(21,128,61,.12); color: #15803d; }
         .badge-soft-success { background: rgba(34,197,94,.1); color: #16a34a; }
-        .badge-soft-warning { background: rgba(250,169,22,.15); color: #b45309; }
+        .badge-soft-warning { background: rgba(245,180,0,.18); color: #92400e; }
         .badge-soft-danger { background: rgba(239,68,68,.1); color: #dc2626; }
         .btn-boba { background: var(--boba-primary); color:#fff; border:none; }
         .btn-boba:hover { background: var(--boba-dark); color:#fff; }
