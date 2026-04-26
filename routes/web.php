@@ -10,8 +10,10 @@ use App\Livewire\HomePageComponent;
 use App\Livewire\InvestorRelationsComponent;
 use App\Livewire\LandingPageComponent;
 use App\Livewire\Seller;
+use App\Services\XenditService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -76,6 +78,23 @@ Route::middleware(['auth'])->prefix('buyer')->group(function () {
     Route::get('/orders', Buyer\OrdersComponent::class)->name('buyer.orders');
     Route::get('/service-requests', Buyer\ServiceRequestsComponent::class)->name('buyer.requests');
 });
+
+// Xendit invoice webhook (CSRF-exempt; signature verified via x-callback-token)
+Route::post('/webhooks/xendit', function (Request $request, XenditService $xendit) {
+    if (! $xendit->verifyCallbackToken($request->header('x-callback-token'))) {
+        Log::warning('Xendit webhook rejected: invalid callback token');
+
+        return response()->json(['ok' => false, 'message' => 'invalid token'], 401);
+    }
+
+    $payable = $xendit->applyInvoiceCallback($request->all());
+
+    return response()->json([
+        'ok' => true,
+        'matched' => (bool) $payable,
+        'reference' => $request->input('external_id'),
+    ]);
+})->name('webhooks.xendit');
 
 // Seller (role enforced inside each component via mount())
 Route::middleware(['auth'])->prefix('seller')->group(function () {

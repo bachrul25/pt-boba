@@ -16,10 +16,17 @@ class Order extends Model
         'shipping_address',
         'shipping_phone',
         'notes',
+        'payment_provider',
+        'payment_external_id',
+        'payment_invoice_id',
+        'payment_status',
+        'payment_url',
+        'paid_at',
     ];
 
     protected $casts = [
         'total' => 'decimal:2',
+        'paid_at' => 'datetime',
     ];
 
     public function buyer(): BelongsTo

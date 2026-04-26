@@ -35,4 +35,13 @@ return [
         ],
     ],
 
+    'xendit' => [
+        'secret_key' => env('XENDIT_SECRET_KEY'),
+        'callback_token' => env('XENDIT_CALLBACK_TOKEN'),
+        'mode' => env('XENDIT_MODE', 'sandbox'),
+        'success_redirect_url' => env('XENDIT_SUCCESS_URL', env('APP_URL').'/buyer/orders'),
+        'failure_redirect_url' => env('XENDIT_FAILURE_URL', env('APP_URL').'/buyer/orders'),
+        'invoice_duration' => (int) env('XENDIT_INVOICE_DURATION', 86400),
+    ],
+
 ];
