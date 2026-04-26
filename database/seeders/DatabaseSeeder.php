@@ -64,7 +64,7 @@ class DatabaseSeeder extends Seeder
                 'role' => 'seller',
                 'phone' => '+62 812-0000-0004',
                 'address' => 'Jakarta',
-                'store_name' => 'Ponpin Green Tech',
+                'store_name' => 'PT BOBA Green Services',
                 'is_active' => true,
             ]
         );
@@ -133,9 +133,9 @@ class DatabaseSeeder extends Seeder
             ['slug' => 'ponpin'],
             [
                 'name' => 'Ponpin',
-                'type' => 'service',
-                'category' => 'Green Technology',
-                'description' => 'Holding company green technology PT BOBA — pengambilan sampah, pengelolaan sampah, pengolahan sampah organik, dan pembuatan bahan bakar kendaraan dari sampah organik.',
+                'type' => 'marketplace',
+                'category' => 'ASEAN Marketplace Platform',
+                'description' => 'Ponpin adalah platform marketplace ASEAN milik PT BOBA. Tempat brand fashion tsoecha.co & sokyuut, serta layanan green technology PT BOBA, dipasarkan ke pembeli di Indonesia dan Asia Tenggara.',
                 'is_active' => true,
             ]
         );
@@ -217,7 +217,7 @@ class DatabaseSeeder extends Seeder
         $milestones = [
             ['title' => 'Pendirian PT BOBA', 'year' => 2024, 'month' => 'Januari', 'description' => 'PT Bikin Orang Bahagia resmi didirikan dengan visi industri tekstil, fashion, dan green technology.', 'icon' => 'bi-flag-fill', 'order_index' => 1],
             ['title' => 'Peluncuran Brand tsoecha.co & sokyuut', 'year' => 2024, 'month' => 'Maret', 'description' => 'Dua brand fashion utama PT BOBA resmi diluncurkan ke pasar nasional.', 'icon' => 'bi-bag-check-fill', 'order_index' => 2],
-            ['title' => 'Peluncuran Ponpin', 'year' => 2024, 'month' => 'Juli', 'description' => 'Holding company green technology Ponpin resmi beroperasi melayani pengelolaan sampah berkelanjutan.', 'icon' => 'bi-recycle', 'order_index' => 3],
+            ['title' => 'Peluncuran Marketplace Ponpin', 'year' => 2024, 'month' => 'Juli', 'description' => 'Ponpin, platform marketplace ASEAN milik PT BOBA, resmi diluncurkan untuk memasarkan brand fashion & layanan green technology PT BOBA.', 'icon' => 'bi-shop-window', 'order_index' => 3],
             ['title' => 'Ekspansi Marketplace Digital', 'year' => 2026, 'month' => 'April', 'description' => 'PT BOBA meluncurkan marketplace digital terintegrasi untuk produk fashion dan layanan green technology.', 'icon' => 'bi-globe', 'order_index' => 4],
             ['title' => 'Visi Pertumbuhan Internasional', 'year' => 2027, 'month' => null, 'description' => 'Rencana ekspansi ke pasar Asia Tenggara dan kerja sama investor strategis nasional/internasional.', 'icon' => 'bi-graph-up-arrow', 'order_index' => 5],
         ];
@@ -227,10 +227,10 @@ class DatabaseSeeder extends Seeder
 
         // Impact metrics
         $metrics = [
-            ['name' => 'Brand Utama', 'value' => '3', 'unit' => 'Brand', 'category' => 'company', 'icon' => 'bi-stars', 'description' => 'tsoecha.co, sokyuut, dan Ponpin di bawah naungan PT BOBA.', 'order_index' => 1],
+            ['name' => 'Brand Utama', 'value' => '2', 'unit' => 'Brand Fashion', 'category' => 'company', 'icon' => 'bi-stars', 'description' => 'tsoecha.co (pria) dan sokyuut (wanita) di bawah PT BOBA, dipasarkan via Ponpin.', 'order_index' => 1],
             ['name' => 'Bidang Bisnis', 'value' => '2', 'unit' => 'Sektor', 'category' => 'company', 'icon' => 'bi-diagram-3', 'description' => 'Fashion (tekstil & produk olahan) dan Green Technology.', 'order_index' => 2],
             ['name' => 'Kategori Produk Fashion', 'value' => '12+', 'unit' => 'Item', 'category' => 'product', 'icon' => 'bi-bag-heart', 'description' => 'Produk fashion pria & wanita siap pasar.', 'order_index' => 3],
-            ['name' => 'Sampah Dikelola', 'value' => '500+', 'unit' => 'Ton/tahun (target)', 'category' => 'esg', 'icon' => 'bi-recycle', 'description' => 'Target awal pengelolaan sampah Ponpin.', 'order_index' => 4],
+            ['name' => 'Sampah Dikelola', 'value' => '500+', 'unit' => 'Ton/tahun (target)', 'category' => 'esg', 'icon' => 'bi-recycle', 'description' => 'Target awal Green Services PT BOBA via Ponpin.', 'order_index' => 4],
             ['name' => 'Reduksi Emisi', 'value' => '120+', 'unit' => 'Ton CO2e/tahun (target)', 'category' => 'esg', 'icon' => 'bi-tree-fill', 'description' => 'Estimasi reduksi emisi melalui pengolahan organik & bahan bakar hijau.', 'order_index' => 5],
             ['name' => 'Potensi Pasar', 'value' => 'Lokal & Internasional', 'unit' => null, 'category' => 'market', 'icon' => 'bi-globe-asia-australia', 'description' => 'Komitmen ekonomi kreatif & ramah lingkungan.', 'order_index' => 6],
         ];
@@ -242,7 +242,7 @@ class DatabaseSeeder extends Seeder
         $docs = [
             ['title' => 'Company Profile PT BOBA 2026', 'category' => 'Profile', 'description' => 'Profil lengkap perusahaan PT Bikin Orang Bahagia.', 'year' => 2026, 'is_public' => true],
             ['title' => 'Pitch Deck Investor', 'category' => 'Investor', 'description' => 'Materi presentasi peluang investasi PT BOBA.', 'year' => 2026, 'is_public' => true],
-            ['title' => 'Sustainability Report Ponpin', 'category' => 'ESG', 'description' => 'Laporan keberlanjutan layanan Ponpin.', 'year' => 2026, 'is_public' => true],
+            ['title' => 'Sustainability Report PT BOBA', 'category' => 'ESG', 'description' => 'Laporan keberlanjutan Green Services PT BOBA yang dipasarkan via Ponpin marketplace.', 'year' => 2026, 'is_public' => true],
         ];
         foreach ($docs as $d) {
             CompanyDocument::updateOrCreate(['title' => $d['title']], $d);

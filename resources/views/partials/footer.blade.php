@@ -3,10 +3,13 @@
         <div class="row g-4">
             <div class="col-md-4">
                 <div class="d-flex align-items-center gap-2 mb-3">
-                    <span class="logo-pill">B</span>
-                    <span class="fw-bold text-white">PT Bikin Orang Bahagia</span>
+                    <img src="{{ asset('images/logo-boba.png') }}" alt="PT BOBA" class="logo-pill">
+                    <span class="d-flex flex-column lh-1">
+                        <span class="fw-bold text-white">PT Bikin Orang Bahagia</span>
+                        <small class="text-secondary" style="font-size:.7rem;letter-spacing:.5px;">Ponpin &middot; ASEAN Marketplace</small>
+                    </span>
                 </div>
-                <p class="small">PT BOBA — industri tekstil, fashion brand, dan layanan green technology yang menghadirkan kebahagiaan dan keberlanjutan.</p>
+                <p class="small">PT BOBA — industri tekstil, fashion brand, dan green services. Seluruh produk &amp; layanan dipasarkan via <strong class="text-white">Ponpin</strong>, marketplace ASEAN milik PT BOBA.</p>
                 <div class="d-flex gap-2 mt-3">
                     <a href="#" aria-label="Instagram"><i class="bi bi-instagram fs-5"></i></a>
                     <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin fs-5"></i></a>
@@ -24,11 +27,12 @@
                 </ul>
             </div>
             <div class="col-6 col-md-2">
-                <h6 class="text-white text-uppercase small fw-bold">Brand</h6>
+                <h6 class="text-white text-uppercase small fw-bold">Brand &amp; Platform</h6>
                 <ul class="list-unstyled small">
                     <li><a href="{{ url('/') }}#brands">tsoecha.co</a></li>
                     <li><a href="{{ url('/') }}#brands">sokyuut</a></li>
-                    <li><a href="{{ url('/') }}#brands">Ponpin</a></li>
+                    <li><a href="{{ url('/') }}#services">Green Services</a></li>
+                    <li><a href="{{ url('/') }}#brands">Ponpin (Marketplace)</a></li>
                 </ul>
             </div>
             <div class="col-md-4">

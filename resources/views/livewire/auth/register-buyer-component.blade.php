@@ -5,7 +5,7 @@
                 <div class="card border-0 shadow-sm">
                     <div class="card-body p-4 p-md-5">
                         <div class="text-center mb-4">
-                            <span class="logo-pill" style="width:56px;height:56px;font-size:1.4rem;">B</span>
+                            <img src="{{ asset('images/logo-boba.png') }}" alt="PT BOBA" class="logo-pill" style="width:64px;height:64px;border-radius:14px;">
                             <h3 class="fw-bold text-boba mt-3 mb-1">Daftar Buyer</h3>
                             <small class="text-secondary">Belanja produk fashion &amp; pesan layanan green tech.</small>
                         </div>
