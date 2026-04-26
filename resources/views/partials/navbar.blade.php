@@ -2,7 +2,10 @@
     <div class="container">
         <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="{{ url('/') }}">
             <img src="{{ asset('images/logo-boba.png') }}" alt="PT BOBA" class="logo-pill">
-            <span class="text-boba">PT BOBA</span>
+            <span class="d-flex flex-column lh-1">
+                <span class="text-boba">PT BOBA</span>
+                <small class="text-secondary fw-normal" style="font-size:.7rem;letter-spacing:.5px;">Ponpin · ASEAN Marketplace</small>
+            </span>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
             <span class="navbar-toggler-icon"></span>

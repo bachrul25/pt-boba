@@ -14,7 +14,8 @@
                     <p class="lead opacity-90 mb-4">
                         PT BOBA menghadirkan produk fashion berkualitas melalui brand
                         <strong>tsoecha.co</strong> dan <strong>sokyuut</strong>,
-                        serta layanan ramah lingkungan melalui <strong>Ponpin</strong>.
+                        serta layanan green technology PT BOBA &mdash; semua dipasarkan via
+                        <strong>Ponpin</strong>, marketplace ASEAN milik PT BOBA.
                     </p>
                     <div class="d-flex flex-wrap gap-2">
                         <a href="{{ url('/register') }}" class="btn btn-warning btn-lg fw-semibold">
@@ -35,6 +36,13 @@
                             <div>
                                 <div class="fw-bold text-boba">PT BOBA</div>
                                 <small class="text-secondary">Industri Tekstil &amp; Green Tech</small>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center gap-3 mb-3 p-2 rounded-3" style="background:var(--boba-light);">
+                            <img src="{{ asset('images/brands/ponpin.png') }}" alt="Ponpin" class="brand-logo-sm" style="width:48px;height:48px;">
+                            <div>
+                                <div class="fw-bold text-boba">Ponpin</div>
+                                <small class="text-secondary">ASEAN Marketplace by PT BOBA</small>
                             </div>
                         </div>
                         <div class="row g-3 text-center">
@@ -73,7 +81,8 @@
                         PT Bikin Orang Bahagia (PT BOBA) adalah perusahaan yang bergerak di bidang
                         industri tekstil, produk olahan, fashion brand, dan layanan green technology.
                         PT BOBA menaungi brand fashion <strong>tsoecha.co</strong> dan <strong>sokyuut</strong>,
-                        serta layanan keberlanjutan <strong>Ponpin</strong>.
+                        serta layanan green technology &mdash; seluruhnya dipasarkan melalui
+                        <strong>Ponpin</strong>, platform marketplace ASEAN milik PT BOBA.
                     </p>
                 </div>
                 <div class="col-lg-7">
@@ -148,9 +157,10 @@
         <div class="container py-3">
             <div class="text-center mb-4">
                 <span class="text-uppercase small fw-bold text-boba">Brand Perusahaan</span>
-                <h2 class="section-title display-6 mb-2">3 Brand Utama PT BOBA</h2>
+                <h2 class="section-title display-6 mb-2">Brand &amp; Platform PT BOBA</h2>
                 <p class="section-subtitle mx-auto" style="max-width:720px">
-                    Fashion pria, fashion wanita, dan layanan green technology &mdash; dalam satu ekosistem.
+                    Dua brand fashion (pria &amp; wanita) di bawah PT BOBA, dipasarkan via
+                    <strong>Ponpin</strong>, platform marketplace ASEAN milik PT BOBA.
                 </p>
             </div>
             <div class="row g-4">
@@ -179,6 +189,10 @@
                                 @if($brand->type === 'service')
                                     <a href="#services" class="btn btn-outline-boba mt-2">
                                         <i class="bi bi-recycle me-1"></i> Pesan Layanan
+                                    </a>
+                                @elseif($brand->type === 'marketplace')
+                                    <a href="{{ url('/register') }}" class="btn btn-boba mt-2">
+                                        <i class="bi bi-shop-window me-1"></i> Buka Marketplace
                                     </a>
                                 @else
                                     <a href="#products" class="btn btn-outline-boba mt-2">
@@ -222,14 +236,14 @@
         </div>
     </section>
 
-    {{-- SERVICES (Ponpin) --}}
+    {{-- GREEN SERVICES (PT BOBA, sold via Ponpin) --}}
     <section id="services" class="py-5">
         <div class="container py-3">
             <div class="text-center mb-4">
                 <span class="text-uppercase small fw-bold text-boba">Green Technology</span>
-                <h2 class="section-title display-6 mb-2">Layanan Ponpin</h2>
+                <h2 class="section-title display-6 mb-2">Green Services PT BOBA</h2>
                 <p class="section-subtitle mx-auto" style="max-width:720px">
-                    Holding company green technology PT BOBA &mdash; pengelolaan sampah &amp; konversi sampah organik menjadi bahan bakar kendaraan.
+                    Layanan green technology PT BOBA &mdash; pengelolaan sampah &amp; konversi sampah organik menjadi bahan bakar kendaraan, dipasarkan via <strong>Ponpin</strong> marketplace.
                 </p>
             </div>
             <div class="row g-3">
@@ -313,9 +327,9 @@
                 </div>
                 <div class="col-md-3">
                     <div class="ecosystem-node h-100 text-center">
-                        <i class="bi bi-recycle text-success fs-2"></i>
+                        <i class="bi bi-shop-window text-success fs-2"></i>
                         <h6 class="fw-bold mt-2">Ponpin</h6>
-                        <p class="small text-secondary mb-0">Green Technology — Pengelolaan &amp; Konversi Sampah</p>
+                        <p class="small text-secondary mb-0">ASEAN Marketplace Platform &mdash; tempat brand &amp; layanan PT BOBA dijual</p>
                     </div>
                 </div>
             </div>
@@ -336,7 +350,7 @@
                     </p>
                     <ul class="list-unstyled small">
                         <li><i class="bi bi-check-circle-fill text-warning me-2"></i> Diversifikasi pendapatan: fashion + jasa lingkungan.</li>
-                        <li><i class="bi bi-check-circle-fill text-warning me-2"></i> Komitmen ESG &amp; ekonomi sirkular melalui Ponpin.</li>
+                        <li><i class="bi bi-check-circle-fill text-warning me-2"></i> Komitmen ESG &amp; ekonomi sirkular via Green Services PT BOBA.</li>
                         <li><i class="bi bi-check-circle-fill text-warning me-2"></i> Skalabilitas tinggi melalui marketplace digital.</li>
                         <li><i class="bi bi-check-circle-fill text-warning me-2"></i> Tim pendiri berpengalaman lintas sektor.</li>
                     </ul>
@@ -359,9 +373,9 @@
         <div class="container py-3">
             <div class="text-center mb-4">
                 <span class="esg-badge"><i class="bi bi-leaf"></i> Sustainability &amp; ESG</span>
-                <h2 class="section-title display-6 mt-2">Komitmen Hijau Lewat Ponpin</h2>
+                <h2 class="section-title display-6 mt-2">Komitmen Hijau PT BOBA</h2>
                 <p class="section-subtitle mx-auto" style="max-width:760px">
-                    Ponpin adalah holding green technology PT BOBA yang berkomitmen pada ekonomi sirkular &mdash;
+                    Green Services PT BOBA &mdash; dipasarkan via Ponpin marketplace &mdash; berkomitmen pada ekonomi sirkular,
                     mengubah sampah menjadi nilai ekonomi sekaligus melindungi lingkungan.
                 </p>
             </div>
@@ -406,8 +420,9 @@
                     <span class="text-uppercase small fw-bold text-boba">Vision for Growth</span>
                     <h2 class="section-title display-6">Visi Pertumbuhan Perusahaan</h2>
                     <p class="section-subtitle">
-                        Roadmap PT BOBA: memperluas penetrasi marketplace, ekspansi brand fashion ke pasar
-                        Asia Tenggara, dan memperbesar dampak ESG Ponpin di skala kota dan regional.
+                        Roadmap PT BOBA: memperluas penetrasi Ponpin marketplace ke pasar ASEAN,
+                        ekspansi brand fashion tsoecha.co &amp; sokyuut, dan memperbesar dampak ESG
+                        Green Services PT BOBA di skala kota dan regional.
                     </p>
                     <a href="{{ url('/investor-relations') }}" class="btn btn-boba">
                         <i class="bi bi-rocket me-1"></i> Lihat Roadmap Investor
@@ -438,9 +453,9 @@
                     <span class="text-uppercase small fw-bold text-boba">Partner / Seller</span>
                     <h2 class="section-title display-6">Bergabung sebagai Mitra Penjual</h2>
                     <p class="section-subtitle">
-                        Daftarkan toko Anda sebagai seller resmi tsoecha.co, sokyuut, atau partner Ponpin.
-                        Nikmati ekosistem marketplace PT BOBA, manajemen produk &amp; layanan terpusat,
-                        serta dukungan branding profesional.
+                        Daftarkan toko Anda sebagai seller di <strong>Ponpin</strong>, marketplace ASEAN milik PT BOBA.
+                        Nikmati ekosistem brand resmi (tsoecha.co, sokyuut, Green Services PT BOBA),
+                        manajemen produk &amp; layanan terpusat, serta dukungan branding profesional.
                     </p>
                     <a href="{{ url('/register/seller') }}" class="btn btn-boba">
                         <i class="bi bi-shop me-1"></i> Daftar sebagai Seller

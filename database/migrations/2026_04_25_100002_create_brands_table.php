@@ -12,7 +12,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('slug')->unique();
-            $table->enum('type', ['fashion', 'service'])->default('fashion');
+            $table->enum('type', ['fashion', 'service', 'marketplace'])->default('fashion');
             $table->string('category')->nullable();
             $table->text('description')->nullable();
             $table->string('logo')->nullable();
