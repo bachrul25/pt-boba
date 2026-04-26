@@ -3,7 +3,7 @@
         <div class="row g-4">
             <div class="col-md-4">
                 <div class="d-flex align-items-center gap-2 mb-3">
-                    <span class="logo-pill">B</span>
+                    <img src="{{ asset('images/logo-boba.png') }}" alt="PT BOBA" class="logo-pill">
                     <span class="fw-bold text-white">PT Bikin Orang Bahagia</span>
                 </div>
                 <p class="small">PT BOBA — industri tekstil, fashion brand, dan layanan green technology yang menghadirkan kebahagiaan dan keberlanjutan.</p>

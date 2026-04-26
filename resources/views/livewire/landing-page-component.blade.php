@@ -31,7 +31,7 @@
                 <div class="col-lg-5">
                     <div class="bg-white text-dark rounded-4 shadow-lg p-4 p-lg-5">
                         <div class="d-flex align-items-center gap-3 mb-3">
-                            <span class="logo-pill" style="width:56px;height:56px;font-size:1.4rem;">B</span>
+                            <img src="{{ asset('images/logo-boba.png') }}" alt="PT BOBA" class="logo-pill" style="width:60px;height:60px;border-radius:14px;">
                             <div>
                                 <div class="fw-bold text-boba">PT BOBA</div>
                                 <small class="text-secondary">Industri Tekstil &amp; Green Tech</small>
@@ -159,12 +159,17 @@
                         <div class="brand-card card h-100 border-0 shadow-sm">
                             <div class="card-body p-4 d-flex flex-column">
                                 <div class="d-flex align-items-center gap-3 mb-3">
-                                    <div class="logo-pill" style="width:56px;height:56px;font-size:1.4rem;">
-                                        @if(str_contains($brand->slug, 'tsoecha')) T
-                                        @elseif(str_contains($brand->slug, 'sokyuut')) S
-                                        @else P
-                                        @endif
-                                    </div>
+                                    @if(str_contains($brand->slug, 'tsoecha'))
+                                        <img src="{{ asset('images/brands/tsoecha.png') }}" alt="{{ $brand->name }}" class="brand-logo-sm">
+                                    @elseif(str_contains($brand->slug, 'sokyuut'))
+                                        <img src="{{ asset('images/brands/sokyuut.png') }}" alt="{{ $brand->name }}" class="brand-logo-sm">
+                                    @elseif(str_contains($brand->slug, 'ponpin'))
+                                        <img src="{{ asset('images/brands/ponpin.png') }}" alt="{{ $brand->name }}" class="brand-logo-sm">
+                                    @else
+                                        <span class="logo-pill" style="width:56px;height:56px;font-size:1.4rem;">
+                                            <i class="bi bi-recycle"></i>
+                                        </span>
+                                    @endif
                                     <div>
                                         <h5 class="fw-bold mb-0">{{ $brand->name }}</h5>
                                         <small class="text-secondary">{{ $brand->category }}</small>

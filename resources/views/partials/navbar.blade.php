@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-boba sticky-top py-2">
     <div class="container">
         <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="{{ url('/') }}">
-            <span class="logo-pill">B</span>
+            <img src="{{ asset('images/logo-boba.png') }}" alt="PT BOBA" class="logo-pill">
             <span class="text-boba">PT BOBA</span>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">

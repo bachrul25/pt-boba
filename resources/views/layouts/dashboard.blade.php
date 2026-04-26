@@ -10,10 +10,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --boba-primary: #15803d;
+            --boba-primary: #166152;
             --boba-secondary: #f5b400;
-            --boba-accent: #34d399;
-            --boba-dark: #064e2c;
+            --boba-accent: #2dbf95;
+            --boba-dark: #0c3f36;
         }
         body { font-family: 'Plus Jakarta Sans', sans-serif; background: #f5f7fb; }
         .sidebar {
@@ -30,7 +30,7 @@
         .card { border: 1px solid #eef2f7; border-radius: 12px; }
         .stat-mini { border-radius: 12px; }
         .table thead th { background: #f8fafc; font-weight: 600; }
-        .badge-soft-primary { background: rgba(21,128,61,.12); color: #15803d; }
+        .badge-soft-primary { background: rgba(22,97,82,.14); color: #0c3f36; }
         .badge-soft-success { background: rgba(34,197,94,.1); color: #16a34a; }
         .badge-soft-warning { background: rgba(245,180,0,.18); color: #92400e; }
         .badge-soft-danger { background: rgba(239,68,68,.1); color: #dc2626; }
@@ -51,7 +51,7 @@
     <div class="d-flex">
         <aside class="sidebar p-3 d-none d-lg-flex flex-column">
             <div class="d-flex align-items-center gap-2 mb-4 px-1">
-                <span class="logo-pill">B</span>
+                <img src="{{ asset('images/logo-boba.png') }}" alt="PT BOBA" class="logo-pill">
                 <div>
                     <div class="brand fw-bold">PT BOBA</div>
                     <small class="text-secondary">{{ ucfirst($u->role) }} Panel</small>
