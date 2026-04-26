@@ -27,3 +27,4 @@ database.sqlite
 # devin testing artefacts
 test-plan.md
 test-report.md
+.devin/

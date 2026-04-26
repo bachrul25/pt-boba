@@ -18,11 +18,18 @@ class ServiceRequest extends Model
         'notes',
         'estimated_price',
         'status',
+        'payment_provider',
+        'payment_external_id',
+        'payment_invoice_id',
+        'payment_status',
+        'payment_url',
+        'paid_at',
     ];
 
     protected $casts = [
         'scheduled_at' => 'date',
         'estimated_price' => 'decimal:2',
+        'paid_at' => 'datetime',
     ];
 
     public function buyer(): BelongsTo
