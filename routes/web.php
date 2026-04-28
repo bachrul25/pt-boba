@@ -66,6 +66,7 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
     Route::get('/documents', Admin\ManageCompanyDocumentsComponent::class)->name('admin.documents');
     Route::get('/milestones', Admin\ManageMilestonesComponent::class)->name('admin.milestones');
     Route::get('/impact-metrics', Admin\ManageImpactMetricsComponent::class)->name('admin.metrics');
+    Route::get('/bmc', Admin\BmcComponent::class)->name('admin.bmc');
 });
 
 // Buyer (role enforced inside each component via mount())
