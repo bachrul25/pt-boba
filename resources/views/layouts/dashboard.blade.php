@@ -73,6 +73,9 @@
                     <a class="nav-link {{ request()->is('admin/documents*') ? 'active' : '' }}" href="{{ url('/admin/documents') }}"><i class="bi bi-folder me-2"></i>Company Documents</a>
                     <a class="nav-link {{ request()->is('admin/milestones*') ? 'active' : '' }}" href="{{ url('/admin/milestones') }}"><i class="bi bi-flag me-2"></i>Milestones</a>
                     <a class="nav-link {{ request()->is('admin/impact-metrics*') ? 'active' : '' }}" href="{{ url('/admin/impact-metrics') }}"><i class="bi bi-bar-chart me-2"></i>Impact Metrics</a>
+                    <hr class="border-secondary">
+                    <small class="text-secondary px-2 mb-1">STRATEGI</small>
+                    <a class="nav-link {{ request()->is('admin/bmc*') ? 'active' : '' }}" href="{{ url('/admin/bmc') }}"><i class="bi bi-grid-3x3-gap me-2"></i>Business Model Canvas</a>
                 @elseif($u->isSeller())
                     <a class="nav-link {{ request()->is('seller') ? 'active' : '' }}" href="{{ url('/seller') }}"><i class="bi bi-speedometer2 me-2"></i>Dashboard</a>
                     <a class="nav-link {{ request()->is('seller/products*') ? 'active' : '' }}" href="{{ url('/seller/products') }}"><i class="bi bi-bag me-2"></i>My Products</a>
